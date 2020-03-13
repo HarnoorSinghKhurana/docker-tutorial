@@ -4,7 +4,7 @@ services:
 
 before_install:
   - cd ./frontend 
-  - docker build -t harnoorsk/frontend .
+  - docker build -t harnoorsk/frontend -f DockerFile.dev .
 
 script:
   - docker run -e CI=true harnoorsk/frontend npm run test
