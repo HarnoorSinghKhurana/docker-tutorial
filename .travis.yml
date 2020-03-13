@@ -1,7 +1,5 @@
-sudo: required
-services:
-  - docker
-  -
+language: java
+  
 before_install:
   - cd ./docker 
   - mvn clean install
