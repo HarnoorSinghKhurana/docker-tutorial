@@ -2,3 +2,16 @@ language: java
 
 before_install:
   - cd ./docker 
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-java"
+  env: "DockerJava-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-765825113335"
+  bucket_path: "docker-java"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
