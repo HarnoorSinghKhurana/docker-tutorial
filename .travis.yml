@@ -6,6 +6,7 @@ before_install:
 deploy:
   edge: true
   provider: elasticbeanstalk
+  script: "mkdir ./target/ && cp -r /home/travis/build/HarnoorSinghKhurana/docker-tutorial/docker/target/docker-0.0.1-SNAPSHOT-docker-info.jar ./target/"
   region: "ap-south-1"
   app: "docker-java"
   env: "DockerJava-env"
