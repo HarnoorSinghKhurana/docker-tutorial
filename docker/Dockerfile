@@ -1,6 +1,5 @@
 FROM openjdk:8-alpine
 VOLUME /tmp
-RUN mvn clean install
 ADD target/docker-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 80
 ENV SPRING_OPTS="-Dspring.config.location=classpath:application.properties"
