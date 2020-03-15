@@ -3,16 +3,13 @@ language: java
 before_install:
   - cd ./docker 
 
-before_deploy:
-  - mvn clean install -DskipTests
-
 deploy:
   edge: true
   provider: elasticbeanstalk
   region: "ap-south-1"
   app: "docker-java"
   env: "DockerJava-env"
-  zip_file: 'target/docker-0.0.1-SNAPSHOT.jar demo.jar'
+  zip_file: 'target/docker-0.0.1-SNAPSHOT.jar'
   bucket_name: "elasticbeanstalk-ap-south-1-765825113335"
   bucket_path: "docker-java"
   on:
