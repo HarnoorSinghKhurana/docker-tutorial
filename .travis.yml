@@ -1,7 +1,11 @@
 language: java
 
 before_install:
-  - cd ./docker 
+  - cd ./docker
+
+script:
+  - mkdir build
+  - cp target/docker-0.0.1-SNAPSHOT.jar build/demo.jar
 
 deploy:
   edge: true
@@ -9,6 +13,7 @@ deploy:
   region: "ap-south-1"
   app: "docker-java"
   env: "DockerJava-env"
+  zip_file: 'build/demo.jar'
   bucket_name: "elasticbeanstalk-ap-south-1-765825113335"
   bucket_path: "docker-java"
   on:
